@@ -1,6 +1,6 @@
 
-import { Repository } from './Repository';
-import { EnvLoader } from './EnvLoader';
+import { Repository } from './Repository.js';
+import { EnvLoader } from './EnvLoader.js';
 
 let repository: Repository | null = null;
 

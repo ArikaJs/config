@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { createRequire } from 'module';
 
-const require = createRequire(import.meta.url);
+const localRequire = createRequire(import.meta.url);
 
 export class Repository {
     private config: Record<string, any> = {};
@@ -41,15 +41,15 @@ export class Repository {
                 if (file.endsWith('.mjs') || file.endsWith('.js')) {
                     // Try dynamic import for ESM
                     // Note: This is simplified. In a real scenario, you might need to handle this async.
-                    // For now, we'll try require and fallback.
+                    // For now, we'll try localRequire and fallback.
                     try {
-                        const module = require(filePath);
+                        const module = localRequire(filePath);
                         configValue = module.default || module;
                     } catch {
                         // If it's a pure ESM file, this might fail in some node versions
                     }
                 } else {
-                    const module = require(filePath);
+                    const module = localRequire(filePath);
                     configValue = module.default || module;
                 }
 
