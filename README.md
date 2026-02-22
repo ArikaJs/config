@@ -227,23 +227,6 @@ const debug = env('APP_DEBUG', false);
 
 ---
 
-## 🏗 Architecture
-
-```text
-config/
-├── src/
-│   ├── EnvLoader.ts
-│   ├── helpers.ts
-│   ├── index.ts
-│   └── Repository.ts
-├── tests/
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-
-
 ```text
 config/
 ├── src/
@@ -258,6 +241,21 @@ config/
 ```
 
 ---
+
+## 🏗 Architecture
+
+```text
+config/
+├── src/
+│   ├── EnvLoader.ts
+│   ├── helpers.ts
+│   ├── index.ts
+│   └── Repository.ts
+├── tests/
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
 ## 📄 License
 
