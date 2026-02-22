@@ -229,15 +229,29 @@ const debug = env('APP_DEBUG', false);
 
 ## 🏗 Architecture
 
-```
+```text
 config/
 ├── src/
-│   ├── Repository.ts   # Config store with caching, validation, freeze, listeners
-│   ├── EnvLoader.ts    # .env file processing with smart type casting
-│   ├── helpers.ts      # Global config() and env() functions
-│   └── index.ts        # Public API
+│   ├── EnvLoader.ts
+│   ├── helpers.ts
+│   ├── index.ts
+│   └── Repository.ts
 ├── tests/
-│   └── Config.test.ts  # 25 comprehensive tests
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+
+
+```text
+config/
+├── src/
+│   ├── EnvLoader.ts
+│   ├── helpers.ts
+│   ├── index.ts
+│   └── Repository.ts
+├── tests/
 ├── package.json
 ├── tsconfig.json
 └── README.md
