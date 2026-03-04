@@ -11,13 +11,13 @@ export class EnvLoader {
         const envPath = path.join(basePath, '.env');
 
         if (fs.existsSync(envPath)) {
-            dotenv.config({ path: envPath });
+            dotenv.config({ path: envPath, override: true });
         }
 
         // Load .env.example if .env doesn't exist (optional, mostly for local dev)
         const examplePath = path.join(basePath, '.env.example');
         if (!fs.existsSync(envPath) && fs.existsSync(examplePath)) {
-            dotenv.config({ path: examplePath });
+            dotenv.config({ path: examplePath, override: true });
         }
     }
 
